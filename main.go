@@ -23,6 +23,16 @@ func main() {
 				Usage: "read only backing API for chain calls",
 				Value: "/dns/api.chain.love/wss",
 			},
+			&cli.StringFlag{
+				Name:  "wallet",
+				Usage: "backing API for wallet calls - or internal to maintain a local keypair",
+				Value: "internal",
+			},
+			&cli.StringFlag{
+				Name:  "root",
+				Usage: "where to store data",
+				Value: "./.filstore",
+			},
 		},
 		Action: Serve,
 	}
